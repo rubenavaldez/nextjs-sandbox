@@ -1,30 +1,15 @@
 /** @format */
-
+import Link from "next/link";
 import React from "react";
 
 export default function Nav() {
   return (
-    <div>
-      <ul className="nav nav-tabs">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">
-            Active
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">
-            Link
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">
-            Link
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-    </div>
+    <nav className="navbar navbar-light bg-light">
+      <div className="container-fluid">
+        <Link href="/" className="navbar-brand mb-0 h1">
+          Navbar
+        </Link>
+      </div>
+    </nav>
   );
 }

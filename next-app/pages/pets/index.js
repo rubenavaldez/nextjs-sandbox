@@ -8,8 +8,10 @@ export default function Pets() {
   const fetchCats = async () => {
     const response = await fetch("/api/cats");
     const data = await response.json();
-
-    setCats(data);
+   
+    setCats([...cats].concat(data));
+    //  console.log(data)
+     console.log("cats",cats)
   };
 
   useEffect(() => {
@@ -18,22 +20,30 @@ export default function Pets() {
 
 
 return (
-  <div>
-      <Nav />
-      
-      {cats.map((cat) =>{(
-        <Card 
-          name={cat.name}
-          id={cat.id}
-          email={cat.email}        
-          phone={cat.phone}
-        
-        />
-        
-      )})}
+  <>
+  <div className='container mt-5 '>
+      <div style={{display:'flex', flexWrap:"wrap",}}>
+      pet page
+     
+      {cats.map((cat)=>{
+        return(
+          <Card 
+            name={cat.name}
+            id={cat.id}
+            phone={cat.phone}
+            image={cat.image}
+            email={cat.email}
+          
+          
+          
+          />
+        )
 
+      })}
+</div>
    </div>
+   </>
 );
 
 };
-// https://www.youtube.com/watch?v=6HTs8HtZMt0 39:38
+// https://www.youtube.com/watch?v=6HTs8HtZMt0 46.06
