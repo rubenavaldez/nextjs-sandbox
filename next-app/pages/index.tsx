@@ -6,6 +6,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav/Nav";
 import Jumbotron from "../components/Jumbotron/Jumbotron";
+import DefaultLayout from "../layouts/Default";
 
 const Home: NextPage = () => {
   return (
@@ -17,8 +18,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Nav />
-        <Jumbotron />
+        <DefaultLayout>
+          <Jumbotron />
+        </DefaultLayout>
       </main>
 
       <footer className={styles.footer}></footer>
