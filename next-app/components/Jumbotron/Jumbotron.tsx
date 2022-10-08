@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 export default function Jumbotron() {
   const router = useRouter();
+
   return (
     <div>
       <div className="jumbotron jumbotron-fluid mt-5">
